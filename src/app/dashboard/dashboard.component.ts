@@ -19,7 +19,6 @@ export class DashboardComponent implements OnInit {
       else if (a.date > b.date) return 1;
       else return 0;
     });
-    console.log(this.deptors)
   }
 
   ngOnInit() {
