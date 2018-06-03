@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h5>The list of deptors</h5>
+    </div>
+    <div class="col text-left">
+      <button class="btn btn-defauld" (click)="addNew()" style="background-color: lightblue;margin-bottom:10px;float: right;outline: none !important;">Add new deptor</button>
+    </div><!--end col-->
+  </div><!--end row-->
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Deptor Name</th>
+        <th scope="col">Dept Amount</th>
+        <th scope="col">Loan Date</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead><!--end table head-->
+    <tbody>
+      <tr *ngFor="let key of keys(deptors) | paginate: { itemsPerPage: 5, currentPage: page }">
+        <th scope="row" style="width: 70px !important;">{{deptors[key].id}}</th>
+        <td routerLink="/deptor/{{deptors[key].id}}">{{deptors[key].name}}</td>
+        <td>{{deptors[key].amount}}</td>
+        <td>{{deptors[key].date}}</td>
+        <td><button class="btn btn-danger btn-sm" (click)="deleteDeptor(key)">Delete</button></td>
+      </tr>
+    </tbody><!--end table body-->
+  </table><!-- end table -->
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+  <div class="addDeptor" *ngIf="addnewdeptor">
+    <h5>Add new deptor</h5>
+    <form action="deptors.component.html">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="id">Id*</label>
+            <input placeholder="Enter ID" type="number" maxlength="5" class="form-control" id="id" name="id" [(ngModel)]="id" required>
+          </div><!--end form-group-->
+          <p *ngIf="invalid_id" style="font-size: 14px; color:red">This field is required</p>
+        </div><!--end col-->
+        <div class="col">
+          <div class="form-group">
+            <label for="name">Name*</label>
+            <input placeholder="Enter the Name" type="text" maxlength="30" class="form-control" id="name" name="dept_name" [(ngModel)]="dept_name" required>
+          </div><!--end form-group-->
+          <p *ngIf="invalid_name" style="font-size: 14px; color:red">This field is required</p>
+        </div><!--end col-->
+      </div><!--end row-->
+
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="amount">Amount*</label>
+            <input placeholder="Enter the Amount" type="number" maxlength="4" class="form-control" id="amount" name="amount" [(ngModel)]="amount" required>
+          </div><!--end form-group-->
+          <p *ngIf="invalid_amount" style="font-size: 14px; color:red">This field is required</p>
+          <p *ngIf="higher_amount" style="font-size: 14px; color:red">The value can not be greater than 1000.</p>
+        </div><!--end col-->
+        <div class="col">
+          <div class="form-group">
+            <label for="date">Date*</label>
+            <input placeholder="Enter the date" type="date" class="form-control" id="date" name="date" [(ngModel)]="date" required>
+          </div><!--end form-group-->
+          <p *ngIf="invalid_date" style="font-size: 14px; color:red">This field is required</p>
+        </div><!--end col-->
+      </div><!--end row-->
+
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-defauld" (click)="addNewDeptor()" style="background-color: lightblue">Add Deptor</button>
+        </div><!--end col-->
+      </div><!--end row-->
+    </form><!--end form-->
+  </div>
+
+</div><!-- end container -->

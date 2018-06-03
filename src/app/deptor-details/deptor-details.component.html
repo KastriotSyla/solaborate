@@ -1,0 +1,56 @@
+<div class="container">
+  <h5>{{deptor.name}} details</h5>
+  <div class="details" *ngIf="deptor">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Deptor Name</th>
+        <th scope="col">Dept Amount</th>
+        <th scope="col">Loan Date</th>
+      </tr>
+      </thead><!--end table head-->
+      <tbody>
+      <tr>
+        <th scope="row" style="width: 70px !important;">{{deptor.id}}</th>
+        <td>{{deptor.name}}</td>
+        <td>{{deptor.amount}}</td>
+        <td>{{deptor.date}}</td>
+      </tr>
+      </tbody><!--end table body-->
+    </table><!-- end table -->
+
+    <h6 class="deptor-details">
+      <span>ID: {{deptor.id}}</span> <br>
+      <span>Name: {{deptor.name}}</span> <br>
+      <span>Amount: {{deptor.amount}}</span> <br>
+      <span>Dept date: {{deptor.date}}</span> <br>
+    </h6>
+
+    <div class="row">
+      <div class="col">
+        <label>Id:
+          <input [(ngModel)]="deptor.id" placeholder="ID">
+        </label><!--end label name-->
+      </div><!--end col-->
+      <div class="col">
+        <label>Name:
+          <input [(ngModel)]="deptor.name" placeholder="Name">
+        </label><!--end label name-->
+      </div><!--end col-->
+      <div class="col">
+        <label>Amount:
+          <input [(ngModel)]="deptor.amount" placeholder="Amount">
+        </label><!--end label amount-->
+      </div><!--end col-->
+      <div class="col">
+        <label>Date:
+          <input [(ngModel)]="deptor.date" placeholder="Date">
+        </label><!--end label date-->
+      </div><!--end col-->
+    </div><!--end row-->
+  </div><!--end details label-->
+
+  <button class="btn btn-default" (click)="goBack()">Save Changes</button>
+</div><!-- end contaioner -->
+

@@ -1,0 +1,5 @@
+.nav-link:hover,
+.nav-link:focus
+{
+  background-color: #f6f6f6;
+}

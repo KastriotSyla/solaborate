@@ -1,0 +1,21 @@
+<div class="container">
+  <h5>The list of latest deptors</h5>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Deptor Name</th>
+      <th scope="col">Dept Amount</th>
+      <th scope="col">Loan Date</th>
+    </tr>
+    </thead><!--end table head-->
+    <tbody>
+    <tr *ngFor="let deptor of deptors" routerLink="/deptor/{{deptor.id}}">
+      <th scope="row" style="width: 70px !important;">{{deptor.id}}</th>
+      <td>{{deptor.name}}</td>
+      <td>{{deptor.amount}}</td>
+      <td>{{deptor.date}}</td>
+    </tr>
+    </tbody><!--end table body-->
+  </table><!-- end table -->
+</div><!--end container-->

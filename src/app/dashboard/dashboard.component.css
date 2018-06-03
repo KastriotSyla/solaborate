@@ -1,0 +1,16 @@
+div.container {
+  margin-top: 60px;
+}
+h5 {
+  font-weight: 400;
+}
+tr:hover{
+  cursor: pointer;
+  background-color: lightblue !important;
+}
+th{
+  font-weight: 400;
+}
+td{
+  font-weight: 300;
+}

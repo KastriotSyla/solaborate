@@ -1,0 +1,42 @@
+div.container {
+  margin-top: 60px;
+}
+div.addDeptor{
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+button,
+button:hover,
+button:focus,
+button:active,
+button:visited{
+  outline: none !important;
+  font-size: 18px;
+}
+h5{
+  font-weight: 400;
+}
+tr:hover{
+  cursor: pointer;
+  background-color: lightblue !important;
+}
+table td{
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+table th{
+  font-weight: 400;
+}
+.ngx-pagination{
+  margin-top: 50px;
+}
+table td:hover,
+table th:hover {
+  cursor: pointer;
+}
+.selected{
+  background-color: lightblue !important;
+}
+form{
+  margin-bottom: 80px;
+}
